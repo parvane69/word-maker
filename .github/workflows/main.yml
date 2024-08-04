@@ -16,7 +16,7 @@ steps:
 
 uses: actions/checkout@v2
 
-•  name: Set up Docker Buildx
+-  name: Set up Docker Buildx
 
 uses: docker/setup-buildx-action@v1
 

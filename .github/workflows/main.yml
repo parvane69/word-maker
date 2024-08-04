@@ -3,9 +3,7 @@ name: Build and push docker image
 on:
   push:
     branches:
-      - prod
-      - stage
-      - storybook
+      - master
 
 env:
   DOCKER_REPO: ${{ secrets.DOCKER_USERNAME }}/task-manager

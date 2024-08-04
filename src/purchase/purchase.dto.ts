@@ -17,5 +17,5 @@ export class PurchaseSaveInputDto {
 
   product_id: number;
 
-  purchase_token: string;
+  purchase_token: string; //
 }

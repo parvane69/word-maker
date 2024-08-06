@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UsersRepository } from '../user/user.repository';
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 import { UserLoginOutputDto, UserRegistrationInputDto } from './auth.dto';
 import { users } from '../base/database/entities/users.entity';
 import { MessageService } from '../base/webServices/sms/message.service';

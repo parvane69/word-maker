@@ -5,7 +5,9 @@ import { RedisModule } from '@liaoliaots/nestjs-redis';
   imports: [
     RedisModule.forRoot({
       config: {
-        url: process.env.REDIS_URL,
+        host: 'redis-container',
+        port: 6379,
+        //url: process.env.REDIS_URL,
       },
     }),
   ],

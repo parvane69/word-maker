@@ -1,7 +1,9 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import 'dotenv/config';
 import { UsersRepository } from './user.repository';
-import { UserOutputDto } from './users.dto';
+import { UserCompletionInputDto, UserOutputDto } from './users.dto';
+import { HttpResponseDto } from '../base/dto/general.dto';
+import { convertToHttpResponseDto } from '../base/utils/convert-info';
 
 @Injectable()
 export class UsersService {
@@ -13,5 +15,13 @@ export class UsersService {
     } catch {
       throw new UnauthorizedException();
     }
+  }
+  async completeInfo(
+    userCompletionInputDto: UserCompletionInputDto,
+    userId: number,
+  ): Promise<HttpResponseDto> {
+    return convertToHttpResponseDto(
+      await this.usersRepository.updateInfo(userId, userCompletionInputDto),
+    );
   }
 }

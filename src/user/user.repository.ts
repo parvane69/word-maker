@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { users } from '../base/database/entities/users.entity';
 import { UserRegistrationInputDto } from '../auth/auth.dto';
+import { UserCompletionInputDto } from './users.dto';
 
 @Injectable()
 export class UsersRepository {
@@ -30,6 +31,15 @@ export class UsersRepository {
   }
   async updateConfirmaitionCode(userId: number, confirmation_code: string) {
     const result = await this.repository.update(userId, { confirmation_code });
+    return result;
+  }
+  async updateInfo(
+    userId: number,
+    userCompletionInputDto: UserCompletionInputDto,
+  ) {
+    const result = await this.repository.update(userId, {
+      ...userCompletionInputDto,
+    });
     return result;
   }
 }

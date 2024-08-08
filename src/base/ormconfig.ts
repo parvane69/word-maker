@@ -5,7 +5,7 @@ import { DataSource, DataSourceOptions } from 'typeorm';
 dotenvConfig({ path: '.env' });
 const config = {
   type: 'postgres',
-  host: process.env.PG_HOST, //'localhost', //'robin.iran.liara.ir',
+  host: process.env.PG_HOST, //'localhost', //'postgres-container',
   port: parseInt(process.env.PG_PORT, 10), //5432, //34779,
   username: process.env.PG_USER, //'postgres', //'root',
   password: process.env.PG_PASSWORD, //'123456', //'LqkcJVMbJLRMjXTXmfVlXupW'
